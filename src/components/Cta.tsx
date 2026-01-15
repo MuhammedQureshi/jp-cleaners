@@ -312,7 +312,7 @@ const CTA = () => {
               <div style={trustBadgesStyle}>
                 <div style={badgeStyle}>
                   <Star style={starStyle} size={20} fill="#10b981" />
-                  <span>5.0 Rating</span>
+                  <span>4.9 Rating</span>
                 </div>
                 <div style={badgeStyle}>
                   <span>✓</span>

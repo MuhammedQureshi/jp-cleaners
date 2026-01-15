@@ -111,7 +111,7 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 0.8 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <a href="#services">
+              <a href="#contact">
               <Button 
                 size="lg"
                 className="bg-gradient-to-r w-full from-emerald-500 via-green-500 to-emerald-600 hover:from-emerald-600 hover:via-green-600 hover:to-emerald-700 text-black shadow-2xl shadow-emerald-500/50 hover:shadow-emerald-500/75 transition-all duration-300 group"

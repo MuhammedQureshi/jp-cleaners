@@ -81,7 +81,7 @@ export function Footer() {
                   <div className="bg-white/5 p-2 rounded-lg group-hover:bg-emerald-500/20 transition-colors">
                     <Mail className="h-4 w-4" />
                   </div>
-                  <span>YNaperez@aol.com</span>
+                  <span>services.jpcleaning@outlook.com</span>
                 </a>
               </li>
               <li>

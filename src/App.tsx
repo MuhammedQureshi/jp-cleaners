@@ -10,6 +10,7 @@ import { WhoWeAre } from './components/About';
 import ServicesList from './components/ServiceList';
 import ServiceBenefits from './components/WhyUs';
 import CleaningServiceFeatures from './components/Stats';
+import CTA from './components/Cta';
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
       <WhoWeAre />
       <ServicesList />
       <Services />
+      <CTA />             
       <ServiceBenefits />
       <CleaningServiceFeatures />
       <BeforeAfter />

@@ -132,7 +132,7 @@ export function Contact() {
                   className="w-full bg-gradient-to-r from-emerald-500 via-green-500 to-emerald-600 hover:from-emerald-600 hover:via-green-600 hover:to-emerald-700 text-black shadow-lg shadow-emerald-500/50 group"
                   size="lg"
                 >
-                  Schedule Consultation
+                  GET A FREE QUOTE
                   <Send className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
 

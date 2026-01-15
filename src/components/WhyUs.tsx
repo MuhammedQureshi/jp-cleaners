@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Shield, Calendar, CheckCircle, Sparkles } from 'lucide-react';
+import { motion } from 'motion/react';
 
 const ServiceBenefits = () => {
   const [visibleItems, setVisibleItems] = useState<Set<number>>(new Set());
@@ -260,19 +261,26 @@ const ServiceBenefits = () => {
         <div style={decorativeCircle2Style}></div>
         
         <div style={contentWrapperStyle}>
-          <div className="header-section" data-index="header" style={headerSectionStyle}>
-            <div style={iconBadgeStyle}>
-              <Sparkles size={18} />
-              <span>Why Choose Us</span>
-            </div>
-            <h1 style={mainHeadingStyle}>
-              Service Benefits
-            </h1>
-            <h2 style={subHeadingStyle}>
-              Experience the difference with our professional cleaning services. 
-              We're committed to delivering exceptional results every time.
-            </h2>
+                  {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-20"
+        >
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-500/10 to-green-500/10 border border-emerald-500/30 rounded-full mb-6">
+            <Sparkles className="h-4 w-4 text-emerald-400" />
+            <span className="text-emerald-400 text-sm tracking-wider uppercase">Why Choose Us</span>
           </div>
+          <h2 className="text-5xl md:text-6xl text-white mb-6">
+            Service Benefits
+          </h2>
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            Experience the difference with our professional cleaning services. 
+            We're committed to delivering exceptional results every time.
+          </p>
+        </motion.div>
 
           <div style={benefitsListStyle}>
             {benefits.map((benefit, index) => {

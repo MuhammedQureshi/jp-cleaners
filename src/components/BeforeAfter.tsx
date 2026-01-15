@@ -149,7 +149,7 @@ export function BeforeAfter() {
           {[
             { value: '100+', label: 'Transformations' },
             { value: '4.9★', label: 'Average Rating' },
-            { value: '98%', label: 'Satisfaction Rate' },
+            { value: '100%', label: 'Satisfaction Rate' },
             { value: '24/7', label: 'Available' },
           ].map((stat, index) => (
             <div key={index} className="text-center">

@@ -111,7 +111,7 @@ export function WhoWeAre() {
           className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6"
         >
           {[
-            { number: "30+", label: "Years Experience" },
+            { number: "5+", label: "Years Experience" },
             { number: "100%", label: "Satisfaction" },
             { number: "Local", label: "Community Focused" },
             { number: "24/7", label: "Support Available" },

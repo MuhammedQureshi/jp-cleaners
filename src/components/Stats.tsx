@@ -25,8 +25,8 @@ const CleaningServiceFeatures = () => {
   }, []);
 
   const containerStyle: React.CSSProperties = {
-    backgroundColor: '#000000',
-    color: 'white',
+    backgroundColor: '#ffffff',
+    color: '#111827',
     padding: '40px 20px',
     fontFamily: 'Arial, sans-serif',
   };
@@ -67,13 +67,13 @@ const CleaningServiceFeatures = () => {
     marginBottom: '12px',
     textTransform: 'uppercase',
     letterSpacing: '0.5px',
-    color: '#ffffff',
+    color: '#111827',
   };
 
   const descriptionStyle: React.CSSProperties = {
     fontSize: '14px',
     lineHeight: '1.6',
-    color: '#9ca3af',
+    color: '#6b7280',
   };
 
   const dividerStyle: React.CSSProperties = {

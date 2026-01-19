@@ -11,14 +11,14 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-black">
-      {/* Parallax Background */}
+     {/* Parallax Background */}
       <motion.div style={{ y }} className="absolute inset-0 z-0">
         <ImageWithFallback
           src="https://images.unsplash.com/photo-1638369022547-1c763b1b9b3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBtb2Rlcm4lMjBpbnRlcmlvcnxlbnwxfHx8fDE3NjE3MzExOTJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
           alt="Luxury interior"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-black/95 to-emerald-950/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-white via-white/95 to-emerald-50/30"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.1),transparent_50%)]"></div>
       </motion.div>
 
@@ -55,10 +55,10 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-500/10 to-green-500/10 border border-emerald-500/30 rounded-full mb-8 backdrop-blur-sm"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-500 to-green-500/10 border border-emerald-500/30 rounded-full mb-8 backdrop-blur-sm"
             >
-              <Star className="h-4 w-4 text-emerald-400 fill-emerald-400" />
-              <span className="text-emerald-400 text-sm tracking-wider uppercase">20% off for new customers</span>
+              <Star className="h-4 w-4 text-white fill-white" />
+              <span className="text-white text-sm tracking-wider uppercase">20% off for new customers</span>
             </motion.div>
 
             {/* Headline */}
@@ -68,8 +68,8 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-6xl md:text-7xl lg:text-8xl mb-6"
             >
-              <span className="block text-white">Shining Cleanliness</span>
-              <span className="block bg-gradient-to-r from-emerald-400 via-green-500 to-emerald-500 bg-clip-text text-transparent">
+              <span className="block text-black">Shining Cleanliness</span>
+              <span className="block bg-gradient-to-r from-emerald-400 via-green-200 to-emerald-500 bg-clip-text text-transparent">
                 Awaits You
               </span>
             </motion.h1>
@@ -78,7 +78,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-xl text-gray-400 mb-12 max-w-xl leading-relaxed"
+              className="text-xl text-black mb-12 max-w-xl leading-relaxed"
             >
               Reliable cleaning services that leave every place fresh, neat, and tidy. Your satisfaction is our priority.
             </motion.p>
@@ -97,9 +97,9 @@ export function Hero() {
               ].map((item, index) => (
                 <div key={index} className="text-center">
                   <div className="bg-gradient-to-br from-emerald-500/10 to-green-500/10 border border-emerald-500/30 rounded-2xl p-4 backdrop-blur-sm mb-2 inline-flex">
-                    <item.icon className="h-6 w-6 text-emerald-400" />
+                    <item.icon className="h-6 w-6 text-black" />
                   </div>
-                  <p className="text-gray-400 text-sm">{item.label}</p>
+                  <p className="text-black text-sm">{item.label}</p>
                 </div>
               ))}
             </motion.div>
@@ -152,7 +152,7 @@ export function Hero() {
                   <div className="text-5xl bg-gradient-to-r from-emerald-400 to-green-500 bg-clip-text text-transparent mb-2">
                     {stat.number}
                   </div>
-                  <div className="text-gray-400 text-sm">{stat.label}</div>
+                  <div className="text-black text-sm">{stat.label}</div>
                 </div>
               </motion.div>
             ))}

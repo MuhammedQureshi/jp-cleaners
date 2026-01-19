@@ -25,11 +25,9 @@ const comparisons = [
   },
 ];
 
-// Slider removed; showing a single image per comparison
-
 export function BeforeAfter() {
   return (
-    <section id="before-after" className="py-32 bg-gradient-to-b from-black via-gray-900 to-black relative overflow-hidden">
+    <section id="before-after" className="py-32 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.05),transparent_70%)]"></div>
       
@@ -43,13 +41,13 @@ export function BeforeAfter() {
           className="text-center mb-20"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-500/10 to-green-500/10 border border-emerald-500/30 rounded-full mb-6">
-            <Sparkles className="h-4 w-4 text-emerald-400" />
-            <span className="text-emerald-400 text-sm tracking-wider uppercase">Transformations</span>
+            <Sparkles className="h-4 w-4 text-emerald-600" />
+            <span className="text-emerald-600 text-sm tracking-wider uppercase">Transformations</span>
           </div>
-          <h2 className="text-5xl md:text-6xl text-white mb-6">
+          <h2 className="text-5xl md:text-6xl text-black mb-6">
             See The Difference
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Witness the remarkable transformations we deliver.
           </p>
         </motion.div>
@@ -64,12 +62,12 @@ export function BeforeAfter() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.2, duration: 0.6 }}
             >
-              <Card className="overflow-hidden border-white/10 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-xl p-8">
+              <Card className="overflow-hidden border-gray-200 bg-white shadow-lg p-8">
                 <div className="grid lg:grid-cols-2 gap-8 items-center">
                   {/* Image */}
                   <div>
                     <div className="relative w-full aspect-[16/12] overflow-hidden rounded-2xl">
-                      <ImageWithFallback
+                      <img
                         src={comparison.after}
                         alt={`${comparison.title} - After`}
                         className="w-full h-full object-cover"
@@ -80,8 +78,8 @@ export function BeforeAfter() {
                   {/* Info */}
                   <div className="space-y-6">
                     <div>
-                      <h3 className="text-3xl text-white mb-4">{comparison.title}</h3>
-                      <p className="text-gray-400 text-lg leading-relaxed">
+                      <h3 className="text-3xl text-black mb-4">{comparison.title}</h3>
+                      <p className="text-gray-600 text-lg leading-relaxed">
                         {comparison.description}
                       </p>
                     </div>
@@ -94,8 +92,8 @@ export function BeforeAfter() {
                           </svg>
                         </div>
                         <div>
-                          <h4 className="text-white mb-1">Professional Results</h4>
-                          <p className="text-gray-500 text-sm">Industry-leading techniques and equipment</p>
+                          <h4 className="text-black mb-1">Professional Results</h4>
+                          <p className="text-gray-600 text-sm">Industry-leading techniques and equipment</p>
                         </div>
                       </div>
 
@@ -106,8 +104,8 @@ export function BeforeAfter() {
                           </svg>
                         </div>
                         <div>
-                          <h4 className="text-white mb-1">Eco-Friendly Products</h4>
-                          <p className="text-gray-500 text-sm">Safe for your family and the environment</p>
+                          <h4 className="text-black mb-1">Eco-Friendly Products</h4>
+                          <p className="text-gray-600 text-sm">Safe for your family and the environment</p>
                         </div>
                       </div>
 
@@ -118,15 +116,15 @@ export function BeforeAfter() {
                           </svg>
                         </div>
                         <div>
-                          <h4 className="text-white mb-1">Satisfaction Guaranteed</h4>
-                          <p className="text-gray-500 text-sm">100% quality assurance on every service</p>
+                          <h4 className="text-black mb-1">Satisfaction Guaranteed</h4>
+                          <p className="text-gray-600 text-sm">100% quality assurance on every service</p>
                         </div>
                       </div>
                     </div>
 
                     <a
                       href="#contact"
-                      className="inline-flex items-center text-emerald-400 hover:text-emerald-300 transition-colors group/link mt-4"
+                      className="inline-flex items-center text-emerald-600 hover:text-emerald-700 transition-colors group/link mt-4"
                     >
                       <span>Book This Service</span>
                       <ArrowRight className="ml-2 h-4 w-4 group-hover/link:translate-x-1 transition-transform" />
@@ -156,7 +154,7 @@ export function BeforeAfter() {
               <div className="text-4xl bg-gradient-to-r from-emerald-400 to-green-500 bg-clip-text text-transparent mb-2">
                 {stat.value}
               </div>
-              <div className="text-gray-400 text-sm">{stat.label}</div>
+              <div className="text-gray-600 text-sm">{stat.label}</div>
             </div>
           ))}
         </motion.div>

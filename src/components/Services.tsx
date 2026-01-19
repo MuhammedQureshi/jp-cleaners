@@ -44,7 +44,7 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="py-32 bg-gradient-to-b from-black via-gray-900 to-black relative overflow-hidden">
+    <section id="services" className="py-32 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.05),transparent_70%)]"></div>
       
@@ -58,13 +58,13 @@ export function Services() {
           className="text-center mb-20"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-500/10 to-green-500/10 border border-emerald-500/30 rounded-full mb-6">
-            <Sparkles className="h-4 w-4 text-emerald-400" />
-            <span className="text-emerald-400 text-sm tracking-wider uppercase">Premium Services</span>
+            <Sparkles className="h-4 w-4 text-emerald-600" />
+            <span className="text-emerald-600 text-sm tracking-wider uppercase">Premium Services</span>
           </div>
-          <h2 className="text-5xl md:text-6xl text-white mb-6">
+          <h2 className="text-5xl md:text-6xl text-black mb-6">
             Curated Excellence
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Each service meticulously crafted to exceed the expectations of the most discerning clientele
           </p>
         </motion.div>
@@ -81,10 +81,10 @@ export function Services() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
               >
-                <Card className="group relative overflow-hidden border-white/10 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-xl hover:border-emerald-500/50 transition-all duration-500 h-full">
+                <Card className="group relative overflow-hidden border-gray-200 bg-white hover:border-emerald-500/50 transition-all duration-500 h-full shadow-lg">
                   {/* Image */}
                   <div className="relative h-64 overflow-hidden">
-                    <ImageWithFallback
+                    <img
                       src={service.image}
                       alt={service.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -93,7 +93,7 @@ export function Services() {
                     
                     {/* Icon */}
                     <div className="absolute top-6 right-6 bg-gradient-to-br from-emerald-500 to-green-500 p-3 rounded-2xl shadow-lg shadow-emerald-500/50">
-                      <Icon className="h-6 w-6 text-black" />
+                      <Icon className="h-6 w-6 text-white" />
                     </div>
 
                     {/* Hover Overlay */}
@@ -102,31 +102,23 @@ export function Services() {
 
                   {/* Content */}
                   <div className="p-8">
-                    <h3 className="text-2xl text-white mb-3">{service.title}</h3>
-                    <p className="text-gray-400 mb-6 leading-relaxed">{service.description}</p>
+                    <h3 className="text-2xl text-black mb-3">{service.title}</h3>
+                    <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
                     
                     {/* Features */}
                     <ul className="space-y-2 mb-6">
                       {service.features.map((feature, i) => (
-                        <li key={i} className="flex items-center gap-2 text-gray-500 text-sm">
+                        <li key={i} className="flex items-center gap-2 text-gray-700 text-sm">
                           <div className="w-1 h-1 bg-emerald-500 rounded-full"></div>
                           {feature}
                         </li>
                       ))}
                     </ul>
-
-                    {/* <a
-                      href="#contact"
-                      className="inline-flex items-center text-emerald-400 hover:text-emerald-300 transition-colors group/link"
-                    >
-                      <span>Learn More</span>
-                      <ArrowRight className="ml-2 h-4 w-4 group-hover/link:translate-x-1 transition-transform" />
-                    </a> */}
                   </div>
 
                   {/* Shine Effect */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <div className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+                    <div className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
                   </div>
                 </Card>
               </motion.div>

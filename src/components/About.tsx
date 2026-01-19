@@ -24,15 +24,10 @@ const sections = [
 
 export function WhoWeAre() {
   return (
-    <section id="about" className="py-32 bg-gradient-to-b from-black via-gray-900 to-black relative overflow-hidden">
+    <section id="about" className="py-32 bg-white relative overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img
-          src={''}
-          alt="Mission background"
-          className="w-full h-full object-cover opacity-20"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-black"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-white to-white"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.1),transparent_70%)]"></div>
       </div>
 
@@ -49,7 +44,7 @@ export function WhoWeAre() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <h2 className="text-6xl md:text-7xl text-white mb-6">
+          <h2 className="text-6xl md:text-7xl text-gray-900 mb-6">
             Who We Are
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-emerald-500 to-green-500 mx-auto"></div>
@@ -71,7 +66,7 @@ export function WhoWeAre() {
                 }}
                 className="relative group"
               >
-                <div className="h-full bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-xl rounded-3xl p-8 border border-white/10 hover:border-emerald-500/50 transition-all duration-500">
+                <div className="h-full bg-gradient-to-br from-gray-100/80 to-white backdrop-blur-xl rounded-3xl p-8 border border-gray-200 hover:border-emerald-500/50 transition-all duration-500 shadow-lg">
                   {/* Icon */}
                   <motion.div
                     whileHover={{ scale: 1.1, rotate: 5 }}
@@ -81,16 +76,16 @@ export function WhoWeAre() {
                     }}
                     className="bg-gradient-to-br from-emerald-500 to-green-500 p-4 justify-center rounded-2xl inline-flex items-start mb-6 shadow-lg shadow-emerald-500/50"
                   >
-                    <Icon className="h-8 w-8 text-black" />
+                    <Icon className="h-8 w-8 text-white" />
                   </motion.div>
 
                   {/* Title */}
-                  <h3 className="text-2xl text-white mb-4">
+                  <h3 className="text-2xl text-gray-900 mb-4 font-semibold">
                     {section.title}
                   </h3>
 
                   {/* Content */}
-                  <p className="text-gray-400 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed">
                     {section.content}
                   </p>
 
@@ -122,12 +117,12 @@ export function WhoWeAre() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.8 + index * 0.1 }}
-              className="text-center p-6 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-xl rounded-2xl border border-white/10"
+              className="text-center p-6 bg-gradient-to-br from-gray-100/80 to-white backdrop-blur-xl rounded-2xl border border-gray-200 shadow-lg"
             >
               <div className="text-4xl bg-gradient-to-r from-emerald-400 to-green-500 bg-clip-text text-transparent mb-2">
                 {stat.number}
               </div>
-              <div className="text-gray-400 text-sm">
+              <div className="text-gray-700 text-sm">
                 {stat.label}
               </div>
             </motion.div>

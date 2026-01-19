@@ -20,12 +20,12 @@ const servicesList = [
   { name: 'Retail Cleaning', icon: ShoppingBag },
 ];
 
-export default function ServicesList() {
+export function ServicesList() {
   const leftCol = servicesList.filter((_, i) => i % 2 === 0);
   const rightCol = servicesList.filter((_, i) => i % 2 === 1);
 
   return (
-    <section id="services" className="py-16 md:py-32 bg-black relative overflow-hidden">
+    <section id="services" className="py-16 md:py-32 bg-white mt-20 relative overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(16,185,129,0.08),transparent_50%)]"></div>
@@ -60,7 +60,6 @@ export default function ServicesList() {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-                {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -69,13 +68,13 @@ export default function ServicesList() {
           className="text-center mb-20"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-500/10 to-green-500/10 border border-emerald-500/30 rounded-full mb-6">
-            <Sparkles className="h-4 w-4 text-emerald-400" />
-            <span className="text-emerald-400 text-sm tracking-wider uppercase">Services</span>
+            <Sparkles className="h-4 w-4 text-emerald-600" />
+            <span className="text-emerald-600 text-sm tracking-wider uppercase">Services</span>
           </div>
-          <h2 className="text-5xl md:text-6xl text-white mb-6">
+          <h2 className="text-5xl md:text-6xl text-black mb-6">
             Our Professional Services
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Comprehensive cleaning solutions tailored to your needs
           </p>
         </motion.div>
@@ -106,7 +105,7 @@ export default function ServicesList() {
                   }}
                   className="group relative cursor-pointer"
                 >
-                  <div className="relative overflow-hidden p-5 md:p-6 rounded-2xl bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 border border-gray-800 hover:border-emerald-500/60 transition-all duration-300 shadow-lg hover:shadow-emerald-500/20"
+                  <div className="relative overflow-hidden p-5 md:p-6 rounded-2xl bg-gradient-to-br from-gray-50 via-white to-gray-50 border border-gray-200 hover:border-emerald-500/60 transition-all duration-300 shadow-lg hover:shadow-emerald-500/20"
                   >
                     {/* Shine Effect on Hover */}
                     <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -139,7 +138,7 @@ export default function ServicesList() {
 
                       {/* Service Name */}
                       <div className="flex-1 min-w-0">
-                        <span className="text-base md:text-lg font-semibold text-white group-hover:text-emerald-400 transition-colors duration-300 block">
+                        <span className="text-base md:text-lg font-semibold text-gray-900 group-hover:text-emerald-600 transition-colors duration-300 block">
                           {service.name}
                         </span>
                       </div>
@@ -151,7 +150,7 @@ export default function ServicesList() {
                         className="opacity-0 group-hover:opacity-100 transition-all duration-300"
                       >
                         <div className="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center">
-                          <svg className="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <svg className="w-4 h-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                           </svg>
                         </div>
@@ -195,7 +194,7 @@ export default function ServicesList() {
                   }}
                   className="group relative cursor-pointer"
                 >
-                  <div className="relative overflow-hidden p-5 md:p-6 rounded-2xl bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 border border-gray-800 hover:border-emerald-500/60 transition-all duration-300 shadow-lg hover:shadow-emerald-500/20"
+                  <div className="relative overflow-hidden p-5 md:p-6 rounded-2xl bg-gradient-to-br from-gray-50 via-white to-gray-50 border border-gray-200 hover:border-emerald-500/60 transition-all duration-300 shadow-lg hover:shadow-emerald-500/20"
                   >
                     {/* Shine Effect on Hover */}
                     <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -228,7 +227,7 @@ export default function ServicesList() {
 
                       {/* Service Name */}
                       <div className="flex-1 min-w-0">
-                        <span className="text-base md:text-lg font-semibold text-white group-hover:text-emerald-400 transition-colors duration-300 block">
+                        <span className="text-base md:text-lg font-semibold text-gray-900 group-hover:text-emerald-600 transition-colors duration-300 block">
                           {service.name}
                         </span>
                       </div>
@@ -240,7 +239,7 @@ export default function ServicesList() {
                         className="opacity-0 group-hover:opacity-100 transition-all duration-300"
                       >
                         <div className="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center">
-                          <svg className="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <svg className="w-4 h-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                           </svg>
                         </div>

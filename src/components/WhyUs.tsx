@@ -31,7 +31,7 @@ const ServiceBenefits = () => {
   }, []);
 
   const containerStyle: React.CSSProperties = {
-    background: '#000000',
+    background: '#ffffff',
     padding: '80px 20px',
     fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
     position: 'relative',
@@ -67,45 +67,6 @@ const ServiceBenefits = () => {
     zIndex: 1,
   };
 
-  const headerSectionStyle: React.CSSProperties = {
-    textAlign: 'center',
-    marginBottom: '60px',
-    opacity: headerVisible ? 1 : 0,
-    transform: headerVisible ? 'translateY(0)' : 'translateY(-30px)',
-    transition: 'all 0.8s ease-out',
-  };
-
-  const iconBadgeStyle: React.CSSProperties = {
-    display: 'inline-flex',
-    alignItems: 'center',
-    gap: '8px',
-    padding: '10px 20px',
-    background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
-    borderRadius: '30px',
-    color: 'white',
-    fontSize: '14px',
-    fontWeight: '600',
-    marginBottom: '20px',
-    boxShadow: '0 4px 15px rgba(16, 185, 129, 0.3)',
-    animation: headerVisible ? 'badge-bounce 0.6s ease-out 0.3s' : 'none',
-  };
-
-  const mainHeadingStyle: React.CSSProperties = {
-    fontSize: '42px',
-    fontWeight: '800',
-    color: '#ffffff',
-    marginBottom: '16px',
-    lineHeight: '1.2',
-  };
-
-  const subHeadingStyle: React.CSSProperties = {
-    fontSize: '18px',
-    color: '#9ca3af',
-    maxWidth: '700px',
-    margin: '0 auto',
-    lineHeight: '1.6',
-  };
-
   const benefitsListStyle: React.CSSProperties = {
     display: 'flex',
     flexDirection: 'column',
@@ -117,9 +78,9 @@ const ServiceBenefits = () => {
     alignItems: 'flex-start',
     gap: '20px',
     padding: '30px',
-    background: '#111827',
+    background: '#f9fafb',
     borderRadius: '20px',
-    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)',
+    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
     opacity: visibleItems.has(index) ? 1 : 0,
     transform: visibleItems.has(index) 
       ? 'translateX(0) scale(1)' 
@@ -127,7 +88,7 @@ const ServiceBenefits = () => {
         ? 'translateX(-50px) scale(0.9)' 
         : 'translateX(50px) scale(0.9)',
     transition: `all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) ${index * 0.15}s`,
-    border: '2px solid #1f2937',
+    border: '2px solid #e5e7eb',
     backgroundClip: 'padding-box',
     position: 'relative',
   });
@@ -152,14 +113,14 @@ const ServiceBenefits = () => {
   const titleStyle: React.CSSProperties = {
     fontSize: '20px',
     fontWeight: '700',
-    color: '#ffffff',
+    color: '#111827',
     marginBottom: '10px',
     lineHeight: '1.4',
   };
 
   const descriptionStyle: React.CSSProperties = {
     fontSize: '16px',
-    color: '#9ca3af',
+    color: '#6b7280',
     lineHeight: '1.7',
   };
 
@@ -194,18 +155,6 @@ const ServiceBenefits = () => {
       }
     }
 
-    @keyframes badge-bounce {
-      0% {
-        transform: scale(0.8);
-      }
-      50% {
-        transform: scale(1.1);
-      }
-      100% {
-        transform: scale(1);
-      }
-    }
-
     .benefit-item:hover {
       transform: translateY(-5px) scale(1.02) !important;
       box-shadow: 0 12px 40px rgba(16, 185, 129, 0.2) !important;
@@ -218,16 +167,6 @@ const ServiceBenefits = () => {
         text-align: center;
         align-items: center;
         padding: 25px 20px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 32px !important;
-      }
-      
-      h2 {
-        font-size: 16px !important;
       }
     }
   `;
@@ -254,33 +193,33 @@ const ServiceBenefits = () => {
   ];
 
   return (
-    <section id="why-choose-us" className="py-32 bg-gradient-to-b from-black via-gray-900 to-black relative overflow-hidden">
+    <section id="why-choose-us" className="py-32 bg-white relative overflow-hidden">
       <style>{keyframesStyle}</style>
       <div style={containerStyle}>
         <div style={decorativeCircleStyle}></div>
         <div style={decorativeCircle2Style}></div>
         
         <div style={contentWrapperStyle}>
-                  {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-20"
-        >
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-500/10 to-green-500/10 border border-emerald-500/30 rounded-full mb-6">
-            <Sparkles className="h-4 w-4 text-emerald-400" />
-            <span className="text-emerald-400 text-sm tracking-wider uppercase">Why Choose Us</span>
-          </div>
-          <h2 className="text-5xl md:text-6xl text-white mb-6">
-            Service Benefits
-          </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            Experience the difference with our professional cleaning services. 
-            We're committed to delivering exceptional results every time.
-          </p>
-        </motion.div>
+          {/* Section Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-20"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-500/10 to-green-500/10 border border-emerald-500/30 rounded-full mb-6">
+              <Sparkles className="h-4 w-4 text-emerald-600" />
+              <span className="text-emerald-600 text-sm tracking-wider uppercase">Why Choose Us</span>
+            </div>
+            <h2 className="text-5xl md:text-6xl text-black mb-6">
+              Service Benefits
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Experience the difference with our professional cleaning services. 
+              We're committed to delivering exceptional results every time.
+            </p>
+          </motion.div>
 
           <div style={benefitsListStyle}>
             {benefits.map((benefit, index) => {

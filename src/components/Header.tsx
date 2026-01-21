@@ -22,6 +22,59 @@ export function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+        const heroStyles = `
+    .social-icon-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    @media (max-width: 768px) {
+      .social-icons-container {
+        right: 10px !important;
+        gap: 10px !important;
+      }
+      
+      .social-icon-btn {
+        width: 48px !important;
+        height: 48px !important;
+      }
+    }
+
+    .hero-gradient-text {
+      background: linear-gradient(135deg, #10b981 0%, #0ea5e9 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .floating-particle {
+      animation: float-up 15s infinite ease-in-out;
+    }
+
+    @keyframes float-up {
+      0%, 100% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.5;
+      }
+      90% {
+        opacity: 0.5;
+      }
+      100% {
+        transform: translateY(-500px) translateX(20px);
+        opacity: 0;
+      }
+    }
+  `;
+
+    const gradientColors = {
+    primary: 'linear-gradient(135deg, #10b981 0%, #0ea5e9 100%)',
+    secondary: 'linear-gradient(135deg, #10b981 0%, #06b6d4 100%)',
+    light: 'linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(14, 165, 233, 0.1) 100%)',
+  };
+
   return (
     <motion.header 
       style={{ backgroundColor: headerBg }}
@@ -88,7 +141,7 @@ export function Header() {
               <span>07411444292</span>
             </a>
             <a href="#contact">
-              <Button className="bg-gradient-to-r from-emerald-500 via-green-500 to-emerald-600 hover:from-emerald-600 hover:via-green-600 hover:to-emerald-700 text-white shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 transition-all duration-300 hover:scale-105 hover:-translate-y-0.5">
+              <Button className="bg-gradient-to-r from-emerald-500 via-green-500 to-emerald-600 hover:from-emerald-600 hover:via-green-600 hover:to-emerald-700 text-white shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 transition-all duration-300 hover:scale-105 hover:-translate-y-0.5" style={{ background: gradientColors.primary }}>
                 Book Now
               </Button>
             </a>
@@ -128,6 +181,7 @@ export function Header() {
               <Button 
                 onClick={() => setIsMenuOpen(false)} 
                 className="bg-gradient-to-r from-emerald-500 to-green-500 text-white w-full"
+                style={{ background: gradientColors.primary }}
               >
                 Book Now
               </Button>

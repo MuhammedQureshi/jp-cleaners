@@ -11,12 +11,14 @@ import { ServicesList } from './components/ServiceList';
 import ServiceBenefits from './components/WhyUs';
 import CleaningServiceFeatures from './components/Stats';
 import CTA from './components/Cta';
+import FixedSocialIcons from './components/Socials';
 
 export default function App() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
       <Hero />
+      <FixedSocialIcons />
       <WhoWeAre />
       <ServicesList />
       <Services />    

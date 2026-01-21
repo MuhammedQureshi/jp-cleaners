@@ -26,6 +26,60 @@ const comparisons = [
 ];
 
 export function BeforeAfter() {
+
+      const heroStyles = `
+    .social-icon-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    @media (max-width: 768px) {
+      .social-icons-container {
+        right: 10px !important;
+        gap: 10px !important;
+      }
+      
+      .social-icon-btn {
+        width: 48px !important;
+        height: 48px !important;
+      }
+    }
+
+    .hero-gradient-text {
+      background: linear-gradient(135deg, #10b981 0%, #0ea5e9 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .floating-particle {
+      animation: float-up 15s infinite ease-in-out;
+    }
+
+    @keyframes float-up {
+      0%, 100% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.5;
+      }
+      90% {
+        opacity: 0.5;
+      }
+      100% {
+        transform: translateY(-500px) translateX(20px);
+        opacity: 0;
+      }
+    }
+  `;
+
+    const gradientColors = {
+    primary: 'linear-gradient(135deg, #10b981 0%, #0ea5e9 100%)',
+    secondary: 'linear-gradient(135deg, #10b981 0%, #06b6d4 100%)',
+    light: 'linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(14, 165, 233, 0.1) 100%)',
+  };
+  
   return (
     <section id="before-after" className="py-32 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
       {/* Background Elements */}
@@ -40,9 +94,9 @@ export function BeforeAfter() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-500/10 to-green-500/10 border border-emerald-500/30 rounded-full mb-6">
-            <Sparkles className="h-4 w-4 text-emerald-600" />
-            <span className="text-emerald-600 text-sm tracking-wider uppercase">Transformations</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-500/10 to-green-500/10 border border-emerald-500/30 rounded-full mb-6" style={{background: gradientColors.primary}}>
+            <Sparkles className="h-4 w-4 text-white"  />
+            <span className="text-white text-sm tracking-wider uppercase">Transformations</span>
           </div>
           <h2 className="text-5xl md:text-6xl text-black mb-6">
             See The Difference
@@ -104,18 +158,6 @@ export function BeforeAfter() {
                           </svg>
                         </div>
                         <div>
-                          <h4 className="text-black mb-1">Eco-Friendly Products</h4>
-                          <p className="text-gray-600 text-sm">Safe for your family and the environment</p>
-                        </div>
-                      </div>
-
-                      <div className="flex items-start gap-3">
-                        <div className="bg-gradient-to-br from-emerald-500 to-green-500 p-2 rounded-lg flex-shrink-0 mt-1">
-                          <svg className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                        </div>
-                        <div>
                           <h4 className="text-black mb-1">Satisfaction Guaranteed</h4>
                           <p className="text-gray-600 text-sm">100% quality assurance on every service</p>
                         </div>
@@ -151,10 +193,10 @@ export function BeforeAfter() {
             { value: '24/7', label: 'Available' },
           ].map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="text-4xl bg-gradient-to-r from-emerald-400 to-green-500 bg-clip-text text-transparent mb-2">
+              <div className="text-4xl hero-gradient-text bg-clip-text text-transparent mb-2">
                 {stat.value}
               </div>
-              <div className="text-gray-600 text-sm">{stat.label}</div>
+              <div className="hero-gradient-text text-sm">{stat.label}</div>
             </div>
           ))}
         </motion.div>

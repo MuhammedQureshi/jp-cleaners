@@ -42,6 +42,59 @@ const contactInfo = [
 ];
 
 export function Contact() {
+
+        const heroStyles = `
+    .social-icon-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    @media (max-width: 768px) {
+      .social-icons-container {
+        right: 10px !important;
+        gap: 10px !important;
+      }
+      
+      .social-icon-btn {
+        width: 48px !important;
+        height: 48px !important;
+      }
+    }
+
+    .hero-gradient-text {
+      background: linear-gradient(135deg, #10b981 0%, #0ea5e9 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .floating-particle {
+      animation: float-up 15s infinite ease-in-out;
+    }
+
+    @keyframes float-up {
+      0%, 100% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.5;
+      }
+      90% {
+        opacity: 0.5;
+      }
+      100% {
+        transform: translateY(-500px) translateX(20px);
+        opacity: 0;
+      }
+    }
+  `;
+
+    const gradientColors = {
+    primary: 'linear-gradient(135deg, #10b981 0%, #0ea5e9 100%)',
+    secondary: 'linear-gradient(135deg, #10b981 0%, #06b6d4 100%)',
+    light: 'linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(14, 165, 233, 0.1) 100%)',
+  };
   return (
     <section id="contact" className="py-32 bg-white relative overflow-hidden">
       {/* Background Elements */}
@@ -56,9 +109,9 @@ export function Contact() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-500/10 to-green-500/10 border border-emerald-500/30 rounded-full mb-6">
-            <Send className="h-4 w-4 text-emerald-600" />
-            <span className="text-emerald-600 text-sm tracking-wider uppercase">Get in Touch</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-500/10 to-green-500/10 border border-emerald-500/30 rounded-full mb-6" style={{background: gradientColors.primary}}>
+            <Send className="h-4 w-4 text-white" />
+            <span className="text-white text-sm tracking-wider uppercase">Get in Touch</span>
           </div>
           <h2 className="text-5xl md:text-6xl text-black mb-6">
             Begin Your Experience
@@ -128,6 +181,7 @@ export function Contact() {
                 <Button 
                   type="submit"
                   className="w-full bg-gradient-to-r from-emerald-500 via-green-500 to-emerald-600 hover:from-emerald-600 hover:via-green-600 hover:to-emerald-700 text-white shadow-lg shadow-emerald-500/50 group"
+                  style={{ background: gradientColors.primary }}
                   size="lg"
                 >
                   GET A FREE QUOTE
@@ -163,7 +217,7 @@ export function Contact() {
                   className="block p-6 bg-gray-50 border border-gray-200 rounded-2xl shadow-lg hover:border-emerald-500/50 transition-all duration-300 group"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="bg-gradient-to-br from-emerald-500 to-green-500 p-3 rounded-xl group-hover:scale-110 transition-transform">
+                    <div className="bg-gradient-to-br from-emerald-500 to-green-500 p-3 rounded-xl group-hover:scale-110 transition-transform" style={{ background: gradientColors.primary }}>
                       <Icon className="h-5 w-5 text-white" />
                     </div>
                     <div>

@@ -1,6 +1,8 @@
 import { motion } from "motion/react";
 import { Target, Eye, Award } from "lucide-react";
 
+
+
 const sections = [
   {
     icon: Target,
@@ -23,6 +25,59 @@ const sections = [
 ];
 
 export function WhoWeAre() {
+
+    const heroStyles = `
+    .social-icon-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    @media (max-width: 768px) {
+      .social-icons-container {
+        right: 10px !important;
+        gap: 10px !important;
+      }
+      
+      .social-icon-btn {
+        width: 48px !important;
+        height: 48px !important;
+      }
+    }
+
+    .hero-gradient-text {
+      background: linear-gradient(135deg, #10b981 0%, #0ea5e9 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .floating-particle {
+      animation: float-up 15s infinite ease-in-out;
+    }
+
+    @keyframes float-up {
+      0%, 100% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.5;
+      }
+      90% {
+        opacity: 0.5;
+      }
+      100% {
+        transform: translateY(-500px) translateX(20px);
+        opacity: 0;
+      }
+    }
+  `;
+
+    const gradientColors = {
+    primary: 'linear-gradient(135deg, #10b981 0%, #0ea5e9 100%)',
+    secondary: 'linear-gradient(135deg, #10b981 0%, #06b6d4 100%)',
+    light: 'linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(14, 165, 233, 0.1) 100%)',
+  };
   return (
     <section id="about" className="py-32 bg-white relative overflow-hidden">
       {/* Background Image with Overlay */}
@@ -47,7 +102,7 @@ export function WhoWeAre() {
           <h2 className="text-6xl md:text-7xl text-gray-900 mb-6">
             Who We Are
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-emerald-500 to-green-500 mx-auto"></div>
+          <div className="w-20 h-1 bg-gradient-to-r from-emerald-500 to-green-500 mx-auto" style={{ background: gradientColors.primary }}></div>
         </motion.div>
 
         {/* Content Sections */}
@@ -74,9 +129,9 @@ export function WhoWeAre() {
                       type: "spring",
                       stiffness: 300,
                     }}
-                    className="bg-gradient-to-br from-emerald-500 to-green-500 p-4 justify-center rounded-2xl inline-flex items-start mb-6 shadow-lg shadow-emerald-500/50"
+                    className="bg-gradient-to-br from-emerald-500 to-green-500 p-4 justify-center rounded-2xl inline-flex items-start mb-6 shadow-lg shadow-emerald-500/50" style={{ background: gradientColors.primary }}
                   >
-                    <Icon className="h-8 w-8 text-white" />
+                    <Icon className="h-8 w-8 text-white"  />
                   </motion.div>
 
                   {/* Title */}
@@ -117,12 +172,12 @@ export function WhoWeAre() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.8 + index * 0.1 }}
-              className="text-center p-6 bg-gradient-to-br from-gray-100/80 to-white backdrop-blur-xl rounded-2xl border border-gray-200 shadow-lg"
+              className="text-center p-6 bg-gradient-to-br from-gray-100/80 to-white backdrop-blur-xl rounded-2xl border border-gray-200 shadow-lg" 
             >
-              <div className="text-4xl bg-gradient-to-r from-emerald-400 to-green-500 bg-clip-text text-transparent mb-2">
+              <div className="text-4xl hero-gradient-text to-white-500 bg-clip-text text-transparent mb-2" >
                 {stat.number}
               </div>
-              <div className="text-gray-700 text-sm">
+              <div className="text-gray-700 text-sm" >
                 {stat.label}
               </div>
             </motion.div>

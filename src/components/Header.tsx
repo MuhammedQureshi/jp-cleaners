@@ -138,11 +138,11 @@ export function Header() {
           >
             <a href="tel:07411444292" className="text-gray-700 hover:text-emerald-600 transition-all duration-300 flex items-center gap-2 hover:scale-105">
               <Phone className="h-4 w-4" />
-              <span>07411444292</span>
+              <span>07424651270</span>
             </a>
             <a href="#contact">
               <Button className="bg-gradient-to-r from-emerald-500 via-green-500 to-emerald-600 hover:from-emerald-600 hover:via-green-600 hover:to-emerald-700 text-white shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 transition-all duration-300 hover:scale-105 hover:-translate-y-0.5" style={{ background: gradientColors.primary }}>
-                Book Now
+                Contact Us
               </Button>
             </a>
           </motion.div>
@@ -183,7 +183,7 @@ export function Header() {
                 className="bg-gradient-to-r from-emerald-500 to-green-500 text-white w-full"
                 style={{ background: gradientColors.primary }}
               >
-                Book Now
+                Contact Us
               </Button>
             </a>
           </motion.nav>

@@ -60,7 +60,7 @@ export function Footer() {
                   <div className="bg-gray-50 p-2 rounded-lg group-hover:bg-emerald-500/20 transition-colors">
                     <Phone className="h-4 w-4" />
                   </div>
-                  <span>07411444292</span>
+                  <span>07424651270</span>
                 </a>
               </li>
               <li>

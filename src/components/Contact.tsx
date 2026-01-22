@@ -10,9 +10,9 @@ const contactInfo = [
   {
     icon: Phone,
     title: 'Phone',
-    details: '07411444292',
+    details: '07424651270',
     subddetails: 'Available 24/7',
-    link: 'tel:07411444292',
+    link: 'tel:07424651270',
   },
   {
     icon: Mail,

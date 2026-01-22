@@ -1,7 +1,5 @@
 import { motion } from "motion/react";
-import { Target, Eye, Award } from "lucide-react";
-
-
+import { Target, Eye, Award, MapPin } from "lucide-react";
 
 const sections = [
   {
@@ -24,144 +22,327 @@ const sections = [
   },
 ];
 
+const serviceAreas = [
+  "Liverpool Street",
+  "East Street",
+  "Brixton",
+  "Shoreditch",
+  "Camden",
+  "Clapham",
+  "Westminster",
+  "Kensington",
+  "Chelsea",
+  "Canary Wharf",
+  "Hackney",
+  "Islington",
+  "Southwark",
+  "Greenwich",
+  "Hammersmith",
+  "Wandsworth",
+];
+
 export function WhoWeAre() {
-
-    const heroStyles = `
-    .social-icon-btn:hover {
-      transform: scale(1.1);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-    }
-
-    @media (max-width: 768px) {
-      .social-icons-container {
-        right: 10px !important;
-        gap: 10px !important;
-      }
-      
-      .social-icon-btn {
-        width: 48px !important;
-        height: 48px !important;
-      }
-    }
-
-    .hero-gradient-text {
-      background: linear-gradient(135deg, #10b981 0%, #0ea5e9 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .floating-particle {
-      animation: float-up 15s infinite ease-in-out;
-    }
-
-    @keyframes float-up {
-      0%, 100% {
-        transform: translateY(0) translateX(0);
-        opacity: 0;
-      }
-      10% {
-        opacity: 0.5;
-      }
-      90% {
-        opacity: 0.5;
-      }
-      100% {
-        transform: translateY(-500px) translateX(20px);
-        opacity: 0;
-      }
-    }
-  `;
-
-    const gradientColors = {
+  const gradientColors = {
     primary: 'linear-gradient(135deg, #10b981 0%, #0ea5e9 100%)',
     secondary: 'linear-gradient(135deg, #10b981 0%, #06b6d4 100%)',
     light: 'linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(14, 165, 233, 0.1) 100%)',
   };
+
   return (
-    <section id="about" className="py-32 bg-white relative overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-white via-white to-white"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.1),transparent_70%)]"></div>
+    <section id="about" style={{
+      paddingTop: '128px',
+      paddingBottom: '128px',
+      background: 'white',
+      position: 'relative',
+      overflow: 'hidden',
+    }}>
+      {/* Background Effects */}
+      <div style={{
+        position: 'absolute',
+        inset: 0,
+        zIndex: 0,
+      }}>
+        <div style={{
+          position: 'absolute',
+          inset: 0,
+          background: 'linear-gradient(to bottom, white, white, white)',
+        }}></div>
+        <div style={{
+          position: 'absolute',
+          inset: 0,
+          background: 'radial-gradient(circle at center, rgba(16, 185, 129, 0.1), transparent 70%)',
+        }}></div>
       </div>
 
       {/* Decorative Lights */}
-      <div className="absolute top-20 left-1/4 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"></div>
-      <div className="absolute top-40 right-1/4 w-96 h-96 bg-green-500/5 rounded-full blur-3xl"></div>
+      <div style={{
+        position: 'absolute',
+        top: '80px',
+        left: '25%',
+        width: '256px',
+        height: '256px',
+        background: 'rgba(16, 185, 129, 0.1)',
+        borderRadius: '9999px',
+        filter: 'blur(64px)',
+      }}></div>
+      <div style={{
+        position: 'absolute',
+        top: '160px',
+        right: '25%',
+        width: '384px',
+        height: '384px',
+        background: 'rgba(34, 197, 94, 0.05)',
+        borderRadius: '9999px',
+        filter: 'blur(64px)',
+      }}></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div style={{
+        maxWidth: '1280px',
+        margin: '0 auto',
+        padding: '0 16px',
+        position: 'relative',
+        zIndex: 10,
+      }}>
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          style={{
+            textAlign: 'center',
+            marginBottom: '80px',
+          }}
         >
-          <h2 className="text-6xl md:text-7xl text-gray-900 mb-6">
+          <h2 style={{
+            fontSize: 'clamp(3rem, 6vw, 4.5rem)',
+            color: '#111827',
+            marginBottom: '24px',
+            fontWeight: '700',
+          }}>
             Who We Are
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-emerald-500 to-green-500 mx-auto" style={{ background: gradientColors.primary }}></div>
+          <div style={{
+            width: '80px',
+            height: '4px',
+            background: gradientColors.primary,
+            margin: '0 auto',
+          }}></div>
         </motion.div>
 
-        {/* Content Sections */}
-        <div className="grid lg:grid-cols-3 gap-8">
-          {sections.map((section, index) => {
-            const Icon = section.icon;
-            return (
-              <motion.div
-                key={section.title}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  delay: index * 0.2,
-                  duration: 0.6,
-                }}
-                className="relative group"
-              >
-                <div className="h-full bg-gradient-to-br from-gray-100/80 to-white backdrop-blur-xl rounded-3xl p-8 border border-gray-200 hover:border-emerald-500/50 transition-all duration-500 shadow-lg">
-                  {/* Icon */}
-                  <motion.div
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    transition={{
-                      type: "spring",
-                      stiffness: 300,
-                    }}
-                    className="bg-gradient-to-br from-emerald-500 to-green-500 p-4 justify-center rounded-2xl inline-flex items-start mb-6 shadow-lg shadow-emerald-500/50" style={{ background: gradientColors.primary }}
-                  >
-                    <Icon className="h-8 w-8 text-white"  />
-                  </motion.div>
+        {/* Two Column Layout */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr',
+          gap: '48px',
+          marginBottom: '80px',
+        }}
+        className="lg:grid-cols-2">
+          {/* Left Column - Who We Are Cards */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+            {sections.map((section, index) => {
+              const Icon = section.icon;
+              return (
+                <motion.div
+                  key={section.title}
+                  initial={{ opacity: 0, x: -40 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    delay: index * 0.2,
+                    duration: 0.6,
+                  }}
+                >
+                  <div style={{
+                    background: 'linear-gradient(to bottom right, rgba(243, 244, 246, 0.8), white)',
+                    backdropFilter: 'blur(12px)',
+                    borderRadius: '24px',
+                    padding: '32px',
+                    border: '1px solid rgb(229, 231, 235)',
+                    transition: 'all 0.5s',
+                    boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+                  }}>
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '20px' }}>
+                      {/* Icon */}
+                      <motion.div
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 300,
+                        }}
+                        style={{
+                          background: gradientColors.primary,
+                          padding: '16px',
+                          borderRadius: '16px',
+                          display: 'inline-flex',
+                          boxShadow: '0 10px 25px rgba(16, 185, 129, 0.5)',
+                          flexShrink: 0,
+                        }}
+                      >
+                        <Icon style={{ height: '32px', width: '32px', color: 'white' }} />
+                      </motion.div>
 
-                  {/* Title */}
-                  <h3 className="text-2xl text-gray-900 mb-4 font-semibold">
-                    {section.title}
+                      <div style={{ flex: 1 }}>
+                        {/* Title */}
+                        <h3 style={{
+                          fontSize: '24px',
+                          color: '#111827',
+                          marginBottom: '12px',
+                          fontWeight: '600',
+                        }}>
+                          {section.title}
+                        </h3>
+
+                        {/* Content */}
+                        <p style={{
+                          color: '#4B5563',
+                          lineHeight: '1.75',
+                        }}>
+                          {section.content}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          {/* Right Column - Service Areas */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div style={{
+              background: 'linear-gradient(to bottom right, rgba(243, 244, 246, 0.8), white)',
+              backdropFilter: 'blur(12px)',
+              borderRadius: '24px',
+              padding: '40px',
+              border: '1px solid rgb(229, 231, 235)',
+              boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+              height: '100%',
+            }}>
+              {/* Header */}
+              <div style={{ marginBottom: '32px' }}>
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '16px',
+                  marginBottom: '16px',
+                }}>
+                  <div style={{
+                    background: gradientColors.primary,
+                    padding: '12px',
+                    borderRadius: '12px',
+                    display: 'inline-flex',
+                    boxShadow: '0 10px 25px rgba(16, 185, 129, 0.5)',
+                  }}>
+                    <MapPin style={{ height: '28px', width: '28px', color: 'white' }} />
+                  </div>
+                  <h3 style={{
+                    fontSize: '28px',
+                    color: '#111827',
+                    fontWeight: '600',
+                  }}>
+                    Areas We Serve
                   </h3>
-
-                  {/* Content */}
-                  <p className="text-gray-600 leading-relaxed">
-                    {section.content}
-                  </p>
-
-                  {/* Decorative Corner */}
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-emerald-500/10 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
                 </div>
-              </motion.div>
-            );
-          })}
+                <p style={{
+                  color: '#6B7280',
+                  lineHeight: '1.75',
+                }}>
+                  Proudly serving London and surrounding areas with professional cleaning services
+                </p>
+              </div>
+
+              {/* Service Areas Grid */}
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(2, 1fr)',
+                gap: '12px',
+              }}>
+                {serviceAreas.map((area, index) => (
+                  <motion.div
+                    key={area}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.05 }}
+                    whileHover={{ scale: 1.05, x: 4 }}
+                  >
+                    <div style={{
+                      background: 'white',
+                      padding: '16px 20px',
+                      borderRadius: '12px',
+                      border: '1px solid rgba(16, 185, 129, 0.2)',
+                      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)',
+                      transition: 'all 0.3s',
+                      cursor: 'pointer',
+                    }}>
+                      <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                      }}>
+                        <div style={{
+                          width: '8px',
+                          height: '8px',
+                          borderRadius: '9999px',
+                          background: gradientColors.primary,
+                          flexShrink: 0,
+                        }}></div>
+                        <span style={{
+                          color: '#374151',
+                          fontSize: '15px',
+                          fontWeight: '500',
+                        }}>
+                          {area}
+                        </span>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Additional Info */}
+              <div style={{
+                marginTop: '32px',
+                padding: '20px',
+                background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(14, 165, 233, 0.1))',
+                borderRadius: '16px',
+                border: '1px solid rgba(16, 185, 129, 0.2)',
+              }}>
+                <p style={{
+                  color: '#374151',
+                  fontSize: '14px',
+                  textAlign: 'center',
+                  lineHeight: '1.6',
+                }}>
+                  Don't see your area? <strong style={{ color: '#10b981' }}>Contact us</strong> - we're expanding our service areas regularly!
+                </p>
+              </div>
+            </div>
+          </motion.div>
         </div>
 
-        {/* Additional Stats */}
-        <motion.div
+        {/* Stats Section */}
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.6, duration: 0.8 }}
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6"
+          transition={{ delay: 0.4, duration: 0.8 }}
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(2, 1fr)',
+            gap: '24px',
+            marginTop: '80px',
+          }}
+          className="md:grid-cols-4"
         >
           {[
-            { number: "5+", label: "Years Experience" },
+            { number: "30+", label: "Years Experience" },
             { number: "100%", label: "Satisfaction" },
             { number: "Local", label: "Community Focused" },
             { number: "24/7", label: "Support Available" },
@@ -171,18 +352,41 @@ export function WhoWeAre() {
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.8 + index * 0.1 }}
-              className="text-center p-6 bg-gradient-to-br from-gray-100/80 to-white backdrop-blur-xl rounded-2xl border border-gray-200 shadow-lg" 
+              transition={{ delay: 0.6 + index * 0.1 }}
+              whileHover={{ scale: 1.05, y: -4 }}
             >
-              <div className="text-4xl hero-gradient-text to-white-500 bg-clip-text text-transparent mb-2" >
-                {stat.number}
-              </div>
-              <div className="text-gray-700 text-sm" >
-                {stat.label}
+              <div style={{
+                textAlign: 'center',
+                padding: '32px 24px',
+                background: 'linear-gradient(to bottom right, rgba(243, 244, 246, 0.8), white)',
+                backdropFilter: 'blur(12px)',
+                borderRadius: '16px',
+                border: '1px solid rgb(229, 231, 235)',
+                boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+                transition: 'all 0.3s',
+              }}>
+                <div style={{
+                  fontSize: '48px',
+                  background: gradientColors.primary,
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  marginBottom: '8px',
+                  fontWeight: '700',
+                }}>
+                  {stat.number}
+                </div>
+                <div style={{
+                  color: '#374151',
+                  fontSize: '14px',
+                  fontWeight: '500',
+                }}>
+                  {stat.label}
+                </div>
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

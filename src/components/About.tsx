@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Target, Eye, Award, MapPin } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const sections = [
   {
@@ -42,6 +43,18 @@ const serviceAreas = [
 ];
 
 export function WhoWeAre() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const gradientColors = {
     primary: 'linear-gradient(135deg, #10b981 0%, #0ea5e9 100%)',
     secondary: 'linear-gradient(135deg, #10b981 0%, #06b6d4 100%)',
@@ -50,8 +63,8 @@ export function WhoWeAre() {
 
   return (
     <section id="about" style={{
-      paddingTop: '128px',
-      paddingBottom: '128px',
+      paddingTop: isMobile ? '64px' : '128px',
+      paddingBottom: isMobile ? '64px' : '128px',
       background: 'white',
       position: 'relative',
       overflow: 'hidden',
@@ -77,20 +90,20 @@ export function WhoWeAre() {
       {/* Decorative Lights */}
       <div style={{
         position: 'absolute',
-        top: '80px',
-        left: '25%',
-        width: '256px',
-        height: '256px',
+        top: isMobile ? '40px' : '80px',
+        left: isMobile ? '10%' : '25%',
+        width: isMobile ? '150px' : '256px',
+        height: isMobile ? '150px' : '256px',
         background: 'rgba(16, 185, 129, 0.1)',
         borderRadius: '9999px',
         filter: 'blur(64px)',
       }}></div>
       <div style={{
         position: 'absolute',
-        top: '160px',
-        right: '25%',
-        width: '384px',
-        height: '384px',
+        top: isMobile ? '80px' : '160px',
+        right: isMobile ? '10%' : '25%',
+        width: isMobile ? '200px' : '384px',
+        height: isMobile ? '200px' : '384px',
         background: 'rgba(34, 197, 94, 0.05)',
         borderRadius: '9999px',
         filter: 'blur(64px)',
@@ -99,7 +112,7 @@ export function WhoWeAre() {
       <div style={{
         maxWidth: '1280px',
         margin: '0 auto',
-        padding: '0 16px',
+        padding: isMobile ? '0 20px' : '0 16px',
         position: 'relative',
         zIndex: 10,
       }}>
@@ -111,14 +124,15 @@ export function WhoWeAre() {
           transition={{ duration: 0.8 }}
           style={{
             textAlign: 'center',
-            marginBottom: '80px',
+            marginBottom: isMobile ? '48px' : '80px',
           }}
         >
           <h2 style={{
-            fontSize: 'clamp(3rem, 6vw, 4.5rem)',
+            fontSize: isMobile ? '2.5rem' : 'clamp(3rem, 6vw, 4.5rem)',
             color: '#111827',
-            marginBottom: '24px',
+            marginBottom: isMobile ? '16px' : '24px',
             fontWeight: '700',
+            lineHeight: '1.2',
           }}>
             Who We Are
           </h2>
@@ -134,35 +148,40 @@ export function WhoWeAre() {
         <div style={{
           display: 'grid',
           gridTemplateColumns: '1fr',
-          gap: '48px',
-          marginBottom: '80px',
+          gap: isMobile ? '32px' : '48px',
+          marginBottom: isMobile ? '48px' : '80px',
         }}
         className="lg:grid-cols-2">
           {/* Left Column - Who We Are Cards */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: isMobile ? '20px' : '32px' }}>
             {sections.map((section, index) => {
               const Icon = section.icon;
               return (
                 <motion.div
                   key={section.title}
-                  initial={{ opacity: 0, x: -40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, x: isMobile ? 0 : -40, y: isMobile ? 20 : 0 }}
+                  whileInView={{ opacity: 1, x: 0, y: 0 }}
                   viewport={{ once: true }}
                   transition={{
-                    delay: index * 0.2,
+                    delay: index * 0.15,
                     duration: 0.6,
                   }}
                 >
                   <div style={{
                     background: 'linear-gradient(to bottom right, rgba(243, 244, 246, 0.8), white)',
                     backdropFilter: 'blur(12px)',
-                    borderRadius: '24px',
-                    padding: '32px',
+                    borderRadius: isMobile ? '20px' : '24px',
+                    padding: isMobile ? '24px' : '32px',
                     border: '1px solid rgb(229, 231, 235)',
                     transition: 'all 0.5s',
                     boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
                   }}>
-                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '20px' }}>
+                    <div style={{ 
+                      display: 'flex', 
+                      alignItems: 'flex-start', 
+                      gap: isMobile ? '16px' : '20px',
+                      flexDirection: isMobile ? 'column' : 'row',
+                    }}>
                       {/* Icon */}
                       <motion.div
                         whileHover={{ scale: 1.1, rotate: 5 }}
@@ -172,22 +191,22 @@ export function WhoWeAre() {
                         }}
                         style={{
                           background: gradientColors.primary,
-                          padding: '16px',
-                          borderRadius: '16px',
+                          padding: isMobile ? '14px' : '16px',
+                          borderRadius: isMobile ? '14px' : '16px',
                           display: 'inline-flex',
                           boxShadow: '0 10px 25px rgba(16, 185, 129, 0.5)',
                           flexShrink: 0,
                         }}
                       >
-                        <Icon style={{ height: '32px', width: '32px', color: 'white' }} />
+                        <Icon style={{ height: isMobile ? '28px' : '32px', width: isMobile ? '28px' : '32px', color: 'white' }} />
                       </motion.div>
 
                       <div style={{ flex: 1 }}>
                         {/* Title */}
                         <h3 style={{
-                          fontSize: '24px',
+                          fontSize: isMobile ? '20px' : '24px',
                           color: '#111827',
-                          marginBottom: '12px',
+                          marginBottom: isMobile ? '8px' : '12px',
                           fontWeight: '600',
                         }}>
                           {section.title}
@@ -197,6 +216,7 @@ export function WhoWeAre() {
                         <p style={{
                           color: '#4B5563',
                           lineHeight: '1.75',
+                          fontSize: isMobile ? '15px' : '16px',
                         }}>
                           {section.content}
                         </p>
@@ -210,39 +230,39 @@ export function WhoWeAre() {
 
           {/* Right Column - Service Areas */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: isMobile ? 0 : 40, y: isMobile ? 20 : 0 }}
+            whileInView={{ opacity: 1, x: 0, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, delay: isMobile ? 0.3 : 0 }}
           >
             <div style={{
               background: 'linear-gradient(to bottom right, rgba(243, 244, 246, 0.8), white)',
               backdropFilter: 'blur(12px)',
-              borderRadius: '24px',
-              padding: '40px',
+              borderRadius: isMobile ? '20px' : '24px',
+              padding: isMobile ? '28px' : '40px',
               border: '1px solid rgb(229, 231, 235)',
               boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
               height: '100%',
             }}>
               {/* Header */}
-              <div style={{ marginBottom: '32px' }}>
+              <div style={{ marginBottom: isMobile ? '24px' : '32px' }}>
                 <div style={{
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '16px',
-                  marginBottom: '16px',
+                  gap: isMobile ? '12px' : '16px',
+                  marginBottom: isMobile ? '12px' : '16px',
                 }}>
                   <div style={{
                     background: gradientColors.primary,
-                    padding: '12px',
-                    borderRadius: '12px',
+                    padding: isMobile ? '10px' : '12px',
+                    borderRadius: isMobile ? '10px' : '12px',
                     display: 'inline-flex',
                     boxShadow: '0 10px 25px rgba(16, 185, 129, 0.5)',
                   }}>
-                    <MapPin style={{ height: '28px', width: '28px', color: 'white' }} />
+                    <MapPin style={{ height: isMobile ? '24px' : '28px', width: isMobile ? '24px' : '28px', color: 'white' }} />
                   </div>
                   <h3 style={{
-                    fontSize: '28px',
+                    fontSize: isMobile ? '22px' : '28px',
                     color: '#111827',
                     fontWeight: '600',
                   }}>
@@ -252,6 +272,7 @@ export function WhoWeAre() {
                 <p style={{
                   color: '#6B7280',
                   lineHeight: '1.75',
+                  fontSize: isMobile ? '14px' : '16px',
                 }}>
                   Proudly serving London and surrounding areas with professional cleaning services
                 </p>
@@ -260,8 +281,8 @@ export function WhoWeAre() {
               {/* Service Areas Grid */}
               <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(2, 1fr)',
-                gap: '12px',
+                gridTemplateColumns: isMobile ? '1fr' : 'repeat(2, 1fr)',
+                gap: isMobile ? '10px' : '12px',
               }}>
                 {serviceAreas.map((area, index) => (
                   <motion.div
@@ -269,13 +290,13 @@ export function WhoWeAre() {
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ delay: index * 0.05 }}
-                    whileHover={{ scale: 1.05, x: 4 }}
+                    transition={{ delay: index * 0.04 }}
+                    whileHover={{ scale: 1.02, x: isMobile ? 0 : 4 }}
                   >
                     <div style={{
                       background: 'white',
-                      padding: '16px 20px',
-                      borderRadius: '12px',
+                      padding: isMobile ? '14px 18px' : '16px 20px',
+                      borderRadius: isMobile ? '10px' : '12px',
                       border: '1px solid rgba(16, 185, 129, 0.2)',
                       boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)',
                       transition: 'all 0.3s',
@@ -287,15 +308,15 @@ export function WhoWeAre() {
                         gap: '8px',
                       }}>
                         <div style={{
-                          width: '8px',
-                          height: '8px',
+                          width: isMobile ? '6px' : '8px',
+                          height: isMobile ? '6px' : '8px',
                           borderRadius: '9999px',
                           background: gradientColors.primary,
                           flexShrink: 0,
                         }}></div>
                         <span style={{
                           color: '#374151',
-                          fontSize: '15px',
+                          fontSize: isMobile ? '14px' : '15px',
                           fontWeight: '500',
                         }}>
                           {area}
@@ -308,15 +329,15 @@ export function WhoWeAre() {
 
               {/* Additional Info */}
               <div style={{
-                marginTop: '32px',
-                padding: '20px',
+                marginTop: isMobile ? '24px' : '32px',
+                padding: isMobile ? '16px' : '20px',
                 background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(14, 165, 233, 0.1))',
-                borderRadius: '16px',
+                borderRadius: isMobile ? '12px' : '16px',
                 border: '1px solid rgba(16, 185, 129, 0.2)',
               }}>
                 <p style={{
                   color: '#374151',
-                  fontSize: '14px',
+                  fontSize: isMobile ? '13px' : '14px',
                   textAlign: 'center',
                   lineHeight: '1.6',
                 }}>
@@ -328,7 +349,7 @@ export function WhoWeAre() {
         </div>
 
         {/* Stats Section */}
-        {/* <motion.div
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -336,8 +357,8 @@ export function WhoWeAre() {
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(2, 1fr)',
-            gap: '24px',
-            marginTop: '80px',
+            gap: isMobile ? '16px' : '24px',
+            marginTop: isMobile ? '48px' : '80px',
           }}
           className="md:grid-cols-4"
         >
@@ -353,20 +374,20 @@ export function WhoWeAre() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.6 + index * 0.1 }}
-              whileHover={{ scale: 1.05, y: -4 }}
+              whileHover={{ scale: isMobile ? 1.02 : 1.05, y: isMobile ? 0 : -4 }}
             >
               <div style={{
                 textAlign: 'center',
-                padding: '32px 24px',
+                padding: isMobile ? '24px 16px' : '32px 24px',
                 background: 'linear-gradient(to bottom right, rgba(243, 244, 246, 0.8), white)',
                 backdropFilter: 'blur(12px)',
-                borderRadius: '16px',
+                borderRadius: isMobile ? '14px' : '16px',
                 border: '1px solid rgb(229, 231, 235)',
                 boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
                 transition: 'all 0.3s',
               }}>
                 <div style={{
-                  fontSize: '48px',
+                  fontSize: isMobile ? '36px' : '48px',
                   background: gradientColors.primary,
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
@@ -378,7 +399,7 @@ export function WhoWeAre() {
                 </div>
                 <div style={{
                   color: '#374151',
-                  fontSize: '14px',
+                  fontSize: isMobile ? '12px' : '14px',
                   fontWeight: '500',
                 }}>
                   {stat.label}
@@ -386,7 +407,7 @@ export function WhoWeAre() {
               </div>
             </motion.div>
           ))}
-        </motion.div> */}
+        </motion.div>
       </div>
     </section>
   );

@@ -56,7 +56,7 @@ const FixedSocialIcons = () => {
     {
       icon: MessageCircle,
       bg: 'linear-gradient(135deg, #25D366, #20c95a)',
-      link: 'https://wa.me/07424651270',
+      link: 'https://wa.me/+447424651270',
       label: 'WhatsApp',
     },
     {

@@ -96,7 +96,7 @@ export function Contact() {
     light: 'linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(14, 165, 233, 0.1) 100%)',
   };
   return (
-    <section id="contact" className="py-32 bg-white relative overflow-hidden">
+    <section id="book" className="py-32 bg-white relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.05),transparent_70%)]"></div>
       
@@ -202,6 +202,7 @@ export function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="lg:col-span-2 space-y-6"
+            id='contact'
           >
             {contactInfo.map((info, index) => {
               const Icon = info.icon;

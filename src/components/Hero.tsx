@@ -130,7 +130,7 @@ export function Hero() {
           zIndex: 0,
         }}>
           <img
-            src="/1.jpeg"
+            src="https://images.unsplash.com/photo-1638369022547-1c763b1b9b3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBtb2Rlcm4lMjBpbnRlcmlvcnxlbnwxfHx8fDE3NjE3MzExOTJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
             alt="Luxury interior"
             style={{
               width: '100%',
@@ -141,13 +141,13 @@ export function Hero() {
               top: '50%',
               left: '50%',
               transform: 'translate(-50%, -50%)',
-              filter: 'brightness(1.7) contrast(2.2)',
+              filter: 'brightness(0.7) contrast(1)',
             }}
           />
           <div style={{
             position: 'absolute',
             inset: 0,
-            background: 'linear-gradient(135deg, rgba(255,255,255,0.95) 100%, rgba(16,185,129,0.1) 50%, rgba(14,165,233,0.15) 100%)',
+            background: 'linear-gradient(135deg, rgba(255,255,255,0.95) 20%, rgba(16,85,129,0.3) 50%, rgba(14,165,233,0.15) 100%)',
           }}></div>
         </div>
 

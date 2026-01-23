@@ -144,7 +144,6 @@ export function Services() {
                       alt={service.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
                     
                     {/* Icon */}
                     <div className="absolute top-6 right-6 bg-gradient-to-br from-emerald-500 to-green-500 p-3 rounded-2xl shadow-lg shadow-emerald-500/50" style={{ background: gradientColors.primary }}>

@@ -56,7 +56,7 @@ const FixedSocialIcons = () => {
     {
       icon: MessageCircle,
       bg: 'linear-gradient(135deg, #25D366, #20c95a)',
-      link: 'https://wa.me/447411444292',
+      link: 'https://wa.me/07424651270',
       label: 'WhatsApp',
     },
     {
@@ -68,7 +68,7 @@ const FixedSocialIcons = () => {
     {
       icon: Phone,
       bg: 'linear-gradient(135deg, #0ea5e9, #06b6d4)',
-      link: 'tel:07411444292',
+      link: 'tel:07424651270',
       label: 'Phone',
     },
     {

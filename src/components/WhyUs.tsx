@@ -246,7 +246,7 @@ const ServiceBenefits = () => {
   };
 
   return (
-    <section id="why-choose-us" className="py-32 bg-white relative overflow-hidden">
+    <section id="why-choose-us" className=" bg-white relative overflow-hidden">
       <style>{keyframesStyle}</style>
       <div style={containerStyle}>
         <div style={decorativeCircleStyle}></div>

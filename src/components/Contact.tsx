@@ -201,7 +201,7 @@ export function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-2 space-y-6"
+            className="lg:col-span-2 space-y-6 pt-[200px] lg:pt-0"
             id='contact'
           >
             {contactInfo.map((info, index) => {

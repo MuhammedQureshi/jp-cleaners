@@ -62,7 +62,7 @@ const FixedSocialIcons = () => {
     {
       icon: Instagram,
       bg: 'linear-gradient(135deg, #E1306C, #C13584)',
-      link: 'https://instagram.com/yourprofile',
+      link: 'https://www.instagram.com/servicesjpscleaning',
       label: 'Instagram',
     },
     {

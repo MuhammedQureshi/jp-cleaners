@@ -23,7 +23,7 @@ export function Footer() {
             </p>
             <div className="flex gap-3">
               <a
-                href="https://www.facebook.com/servicesjpscleaning"
+                href="https://www.instagram.com/servicesjpscleaning"
                 aria-label="Facebook"
                 className="w-10 h-10 rounded-lg bg-gray-50 hover:bg-emerald-500/20 border border-gray-200 hover:border-emerald-500/50 flex items-center justify-center transition-all duration-300"
               >

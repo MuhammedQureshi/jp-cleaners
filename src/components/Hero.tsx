@@ -130,7 +130,7 @@ export function Hero() {
           zIndex: 0,
         }}>
           <img
-            src="https://images.unsplash.com/photo-1638369022547-1c763b1b9b3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBtb2Rlcm4lMjBpbnRlcmlvcnxlbnwxfHx8fDE3NjE3MzExOTJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+            src="https://images.squarespace-cdn.com/content/v1/611b3a86fb6a226aadffcf79/e87d697b-d7b2-4dc1-87fe-a83f0adcb86b/Living+Room+Cleaning.png"
             alt="Luxury interior"
             style={{
               width: '100%',

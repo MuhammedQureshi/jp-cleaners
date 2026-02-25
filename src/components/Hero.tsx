@@ -130,7 +130,7 @@ export function Hero() {
           zIndex: 0,
         }}>
           <img
-            src="https://images.squarespace-cdn.com/content/v1/611b3a86fb6a226aadffcf79/e87d697b-d7b2-4dc1-87fe-a83f0adcb86b/Living+Room+Cleaning.png"
+            src="https://1clean.co.uk/wp-content/uploads/2023/05/What-is-domestic-cleaning-article-Main-Image.webp"
             alt="Luxury interior"
             style={{
               width: '100%',

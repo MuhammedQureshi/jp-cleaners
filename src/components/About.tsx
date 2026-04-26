@@ -272,7 +272,7 @@ export function WhoWeAre() {
                   lineHeight: '1.75',
                   fontSize: isMobile ? '14px' : '16px',
                 }}>
-                  Proudly serving London and surrounding areas with professional cleaning services
+                  Serving Central London and surrounding areas across North, South, East & West London, including parts of Kent.
                 </p>
               </div>
 

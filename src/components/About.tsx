@@ -24,22 +24,20 @@ const sections = [
 ];
 
 const serviceAreas = [
-  "Liverpool Street",
-  "East Street",
-  "Brixton",
-  "Shoreditch",
-  "Camden",
-  "Clapham",
+  "Central London",
   "Westminster",
+  "Camden",
+  "Shoreditch",
+  "Canary Wharf",
   "Kensington",
   "Chelsea",
-  "Canary Wharf",
-  "Hackney",
-  "Islington",
-  "Southwark",
   "Greenwich",
-  "Hammersmith",
-  "Wandsworth",
+  "Clapham",
+  "Wimbledon",
+  "Richmond",
+  "Croydon",
+  "Bromley",
+  "Kent",
 ];
 
 export function WhoWeAre() {
